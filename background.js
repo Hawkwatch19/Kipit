@@ -203,7 +203,6 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === 'addProblem') {
-    // Open popup or send message to content script
-    chrome.action.openPopup();
+    chrome.tabs.sendMessage(tab.id, { action: "openSaveUI" });
   }
 });
