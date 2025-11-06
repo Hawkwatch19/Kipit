@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "Kipit",
+  "version": "1.0.0",
+  "description": "Keep amazing cp problems across multiple OJ",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://codeforces.com/*",
+    "https://leetcode.com/*",
+    "https://atcoder.jp/*",
+    "https://www.codechef.com/*",
+    "https://cses.fi/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/problemset/problem/*", "https://codeforces.com/contest/*/problem/*"],
+      "js": ["content-codeforces.js"]
+    },
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["content-leetcode.js"]
+    },
+    {
+      "matches": ["https://atcoder.jp/contests/*/tasks/*"],
+      "js": ["content-atcoder.js"]
+    },
+    {
+      "matches": ["https://www.codechef.com/problems/*"],
+      "js": ["content-codechef.js"]
+    },
+    {
+      "matches": ["https://cses.fi/problemset/task/*"],
+      "js": ["content-cses.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
