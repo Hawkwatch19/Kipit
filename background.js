@@ -1,4 +1,4 @@
-// Background service worker for Problem Tracker
+// Background service worker for Kipit
 
 // Listen for messages from content scripts and popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -189,7 +189,7 @@ async function checkCodeChefSolved(problemUrl, handle) {
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'addProblem',
-    title: 'Add to Problem Tracker',
+    title: 'Add to Kipit',
     contexts: ['page'],
     documentUrlPatterns: [
       'https://codeforces.com/*',

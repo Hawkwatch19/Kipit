@@ -1,4 +1,4 @@
-// Problem Tracker Extension App
+// Kipit Extension App
 (function() {
   'use strict';
 
@@ -237,7 +237,7 @@
     renderHeader() {
       return `
         <div class="bg-gradient text-white p-4 sticky top-0 z-10 shadow-lg">
-          <h1 class="text-xl font-bold mb-3">Problem Tracker</h1>
+          <h1 class="text-xl font-bold mb-3">Kipit</h1>
           <div class="flex gap-2">
             <button data-action="setView" data-view="problems" class="px-3 py-2 rounded-lg text-sm ${this.state.view === 'problems' ? 'bg-white text-blue-600' : 'bg-blue-500'}">
               📋 Lists
@@ -396,11 +396,11 @@
               ${problem.notes ? `<p class="text-sm text-gray-600 mt-2 bg-gray-50 p-2 rounded">${this.escapeHtml(problem.notes)}</p>` : ''}
             </div>
             <div class="flex gap-1 ml-2">
-              <a href="${problem.url}" target="_blank" class="p-2 hover:bg-blue-100 rounded text-blue-600">🔗</a>
-              <button data-action="toggleSolved" data-id="${problem.id}" class="p-2 hover:bg-gray-100 rounded">✏️</button>
+              <a href="${problem.url}" target="_blank" class="p-2 hover:bg-blue-100 rounded text-blue-600">Link</a>
+              <button data-action="toggleSolved" data-id="${problem.id}" class="p-2 hover:bg-gray-100 rounded">✅</button>
               ${!isTodoView ? 
-                `<button data-action="addToTodo" data-id="${problem.id}" class="p-2 hover:bg-green-100 rounded text-green-600">✓</button>` :
-                `<button data-action="removeFromTodo" data-id="${problem.id}" class="p-2 hover:bg-yellow-100 rounded text-yellow-600">×</button>`
+                `<button data-action="addToTodo" data-id="${problem.id}" class="p-2 hover:bg-green-100 rounded text-green-600">+</button>` :
+                `<button data-action="removeFromTodo" data-id="${problem.id}" class="p-2 hover:bg-yellow-100 rounded text-yellow-600">-</button>`
               }
               <button data-action="deleteProblem" data-id="${problem.id}" class="p-2 hover:bg-red-100 rounded text-red-500">🗑</button>
             </div>

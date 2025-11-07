@@ -5,10 +5,11 @@
   "description": "Keep amazing cp problems across multiple OJ",
 
   "permissions": [
-    "storage",
-    "activeTab",
+    "contextMenus",
     "tabs",
-    "contextMenus"
+    "activeTab",
+    "storage",
+    "scripting"
   ],
 
   "host_permissions": [
